@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family - Ahmad Amer Muqtaar</title>
+    <meta charset="UTF-8">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Tangerine:wght@700&family=Cormorant+Garamond:wght@700&family=Helvetica&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- MASTER STYLE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #800020;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* LOGO (Fixed Kiri Atas) */
+        .logo {
+            position: fixed; top: 30px; left: 35px; z-index: 9999;
+            font-family: 'Tangerine', cursive; font-size: 40px;
+            background: linear-gradient(to bottom, #d4af37 0%, #f4e4a6 30%, #fffbea 50%, #f4e4a6 70%, #d4af37 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            border: 2px solid #d4af37; padding: 5px 16px; border-radius: 10px;
+            background-color: rgba(0,0,0,0.2); box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+            cursor: default; margin: 0;
+        }
+
+        /* NAVIGATION BAR (Style Terapung / Floating Pill) */
+        .nav-table {
+            position: fixed; top: 0; right: 10px;
+            background: rgba(128, 0, 32, 0.95); backdrop-filter: blur(10px);
+            border-radius: 0 0 35px 35px; z-index: 9998; padding: 15px 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.7), 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .nav-link {
+            font-family: 'Helvetica', sans-serif; font-size: 13px; letter-spacing: 2px;
+            color: #d4af37; text-decoration: none; font-weight: bold;
+            padding: 10px 16px; border: 2px solid transparent; border-radius: 25px;
+            display: inline-block; margin: 0 2px; transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ffffff; border: 2px solid #d4af37;
+            background: rgba(212, 175, 55, 0.2); box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* IMAGES (Glow Effect) */
+        .neon-image {
+            transition: all 0.3s ease; border: 3px solid #d4af37; border-radius: 15px;
+            display: block; 
+        }
+        .neon-image:hover {
+            box-shadow: 0 0 20px #d4af37, 0 0 40px #d4af37; transform: scale(1.02);
+        }
+/* --- CSS HYBRID MENU & RESPONSIVE --- */
+
+    /* Asalnya sorok menu phone */
+    .mobile-only { display: none; }
+    
+    /* Bila masuk Phone (Skrin Kecil) */
+    @media screen and (max-width: 768px) {
+        /* Sorok menu laptop */
+        .desktop-only { display: none; }
+
+        /* Tunjuk butang menu phone */
+        .mobile-only {
+            display: block;
+            position: fixed;
+            top: 20px; right: 20px;
+            z-index: 9999; text-align: right;
+        }
+
+        /* Style butang MENU */
+        summary {
+            background: rgba(128, 0, 32, 0.95);
+            color: #d4af37;
+            padding: 10px 20px;
+            border: 2px solid #d4af37;
+            border-radius: 20px;
+            font-weight: bold;
+            font-family: 'Helvetica', sans-serif;
+            cursor: pointer;
+            list-style: none; display: inline-block;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        
+        /* Table dalam menu phone */
+        .mobile-only table {
+            margin-top: 10px;
+            background: rgba(0, 0, 0, 0.95);
+            border-radius: 10px;
+        }
+        
+        /* Reset Logo */
+        .logo {
+            position: static !important;
+            display: block; text-align: center;
+            margin: 20px auto; width: 100%;
+        }
+
+        /* Fix Gambar & Layout */
+        img { max-width: 100% !important; height: auto !important; }
+        
+        /* --- TEKNIK SUSUN CONTENT (TANPA KACAU FOOTER) --- */
+        
+        /* 1. Paksa table utama jadi lebar penuh */
+        table { width: 100% !important; }
+
+        /* 2. Content Body: Susun Gambar & Teks jadi Atas-Bawah */
+        td { 
+            display: block; 
+            width: 100% !important; 
+            text-align: center !important; 
+            padding: 10px !important; 
+        }
+
+        /* 3. PENGECUALIAN KHAS: FOOTER (Jangan Sentuh!) */
+        footer td {
+            display: table-cell !important; /* Paksa kekal melintang */
+            width: 20% !important; /* Bahagi 5 ruang untuk ikon */
+            padding: 5px !important;
+            vertical-align: middle !important;
+        }
+        
+        /* Kecilkan Font Tajuk */
+        font[size="7"], font[size="6"] { font-size: 35px !important; }
+        font[size="4"] { font-size: 18px !important; }
+    }
+    </style>
+</head>
+
+<body bgcolor="#800020">
+
+    <h1 class="logo">Muqtaar</h1>
+
+    <table class="nav-table desktop-only" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="center">
+            <a href="muqtaarhomepage.html" class="nav-link">HOME</a>
+            <a href="biodata.html" class="nav-link">BIODATA</a>
+            <a href="education.html" class="nav-link">EDUCATION</a>
+            <a href="experience.html" class="nav-link">EXPERIENCE</a>
+            <a href="gallery.html" class="nav-link">GALLERY</a>
+            <a href="family.html" class="nav-link active">FAMILY</a> 
+            <a href="contact.html" class="nav-link">CONTACT</a>
+        </td>
+    </tr>
+</table>
+
+<details class="mobile-only">
+    <summary>☰ MENU</summary>
+    <table bgcolor="#4d0011" border="1" bordercolor="#d4af37" cellpadding="10" cellspacing="0" width="200">
+        <tr><td align="center"><a href="muqtaarhomepage.html" class="nav-link">HOME</a></td></tr>
+        <tr><td align="center"><a href="biodata.html" class="nav-link">BIODATA</a></td></tr>
+        <tr><td align="center"><a href="education.html" class="nav-link">EDUCATION</a></td></tr>
+        <tr><td align="center"><a href="experience.html" class="nav-link">EXPERIENCE</a></td></tr>
+        <tr><td align="center"><a href="gallery.html" class="nav-link">GALLERY</a></td></tr>
+        <tr><td align="center"><a href="family.html" class="nav-link active">FAMILY</a></td></tr>
+        <tr><td align="center"><a href="contact.html" class="nav-link">CONTACT</a></td></tr>
+    </table>
+</details>
+
+    <br><br><br><br><br>
+
+    <table width="100%" cellpadding="20" cellspacing="0">
+        <tr>
+            <td align="center">
+                <font face="Helvetica, sans-serif" size="4" color="#d4af37" style="letter-spacing: 5px;">THE BACKBONE</font>
+                <br>
+                <font face="Cormorant Garamond, serif" size="7" color="#d4af37"><b>My Support System</b></font>
+                <br><hr width="150" size="2" color="#d4af37">
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table width="85%" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+        <tr>
+            <td align="center">
+                <img src="images/fam pic.jpeg" width="100%" height="500" class="neon-image" style="object-fit:cover;">
+                <br><br>
+                <font face="Cormorant Garamond" size="5" color="#f8f6e3"><i>"Family is not an important thing. It's everything."</i></font>
+            </td>
+        </tr>
+    </table>
+
+    <br><br><br>
+
+    <table width="100%" cellpadding="30" cellspacing="0" bgcolor="#4d0011" style="border-top: 3px solid #d4af37; border-bottom: 3px solid #d4af37;">
+        <tr>
+            <td align="center">
+                <font face="Tangerine" size="8" color="#d4af37">Mr. Yedeen Fam's</font>
+                <br>
+                <font face="Montserrat" size="3" color="#ffffff" style="letter-spacing: 2px;">THE LEGACY & SIBLINGS</font>
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <table width="85%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#4d0011" style="border-radius: 20px; border: 1px solid #6b0017; overflow: hidden; margin: 0 auto;">
+        
+        <tr><td colspan="2" height="40"></td></tr> <tr>
+            <td width="40%" align="center" style="padding-left: 40px;">
+                <img src="images/big bro pic.jpeg" width="300" height="400" class="neon-image" style="object-fit:cover;">
+            </td>
+            
+            <td width="60%" valign="middle" style="padding: 0 40px;">
+                <font face="Montserrat" size="2" color="#d4af37">ELDEST BROTHER • 28 YEARS</font><br>
+                <font face="Cormorant Garamond" size="6" color="#ffffff"><b>Muhammad Asyraaf</b></font><br>
+                <font face="Helvetica" size="2" color="#cccccc">Bin Shaik Alaudeen</font>
+                <br><br>
+                <hr width="100%" size="1" color="#d4af37">
+                <br>
+                <font face="Montserrat" size="4" color="#d4af37"><b>The Principled Guardian</b></font>
+                <br><br>
+                <p style="text-align: justify; font-family: 'Montserrat', sans-serif; font-size: 15px; color: #f8f6e3; line-height: 1.8; margin: 0;">
+                    A figure of authority whose stern demeanor reflects a profound commitment to order and discipline. Assertive and unwavering, he serves as the moral compass of the family, ensuring that principles are upheld with absolute integrity.
+                </p>
+            </td>
+        </tr>
+
+        <tr><td colspan="2" height="40"></td></tr> </table>
+
+    <br><br>
+
+    <table width="85%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#5e0013" style="border-radius: 20px; border: 1px solid #800020; overflow: hidden; margin: 0 auto;">
+        
+        <tr><td colspan="2" height="40"></td></tr>
+
+        <tr>
+            <td width="60%" valign="middle" style="padding: 0 40px;">
+                <div style="text-align: right;"> <font face="Montserrat" size="2" color="#d4af37">SECOND BROTHER • 24 YEARS</font><br>
+                    <font face="Cormorant Garamond" size="6" color="#ffffff"><b>Ahmad Rais Muhsin</b></font><br>
+                    <font face="Helvetica" size="2" color="#cccccc">Bin Shaik Alaudeen</font>
+                </div>
+                <br>
+                <hr width="100%" size="1" color="#d4af37">
+                <br>
+                <font face="Montserrat" size="4" color="#d4af37"><b>The Jovial Spirit</b></font>
+                <br><br>
+                <p style="text-align: justify; direction: rtl; font-family: 'Montserrat', sans-serif; font-size: 15px; color: #f8f6e3; line-height: 1.8; margin: 0;">
+                    Possessing a whimsical and unorthodox approach to life, he serves as the family's primary source of levity. His refusal to succumb to excessive seriousness brings a necessary balance of joy, wit, and spontaneity to the household dynamic.
+                </p>
+            </td>
+
+            <td width="40%" align="center" style="padding-right: 40px;">
+                <img src="images/muhsin.jpeg" width="300" height="400" class="neon-image" style="object-fit:cover;">
+            </td>
+        </tr>
+
+        <tr><td colspan="2" height="40"></td></tr>
+    </table>
+
+    <br><br>
+
+    <table width="85%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#4d0011" style="border-radius: 20px; border: 1px solid #6b0017; overflow: hidden; margin: 0 auto;">
+        
+        <tr><td colspan="2" height="40"></td></tr>
+
+        <tr>
+            <td width="40%" align="center" style="padding-left: 40px;">
+                <img src="images/pro3.jpeg" width="300" height="400" class="neon-image" style="object-fit:cover;">
+            </td>
+            
+            <td width="60%" valign="middle" style="padding: 0 40px;">
+                <font face="Montserrat" size="2" color="#d4af37">THIRD BROTHER (ME) • 20 YEARS</font><br>
+                <font face="Cormorant Garamond" size="6" color="#ffffff"><b>Ahmad Amer Muqtaar</b></font><br>
+                <font face="Helvetica" size="2" color="#cccccc">Bin Shaik Alaudeen</font>
+                <br><br>
+                <hr width="100%" size="1" color="#d4af37">
+                <br>
+                <font face="Montserrat" size="4" color="#d4af37"><b>The Industrious Visionary</b></font>
+                <br><br>
+                <p style="text-align: justify; font-family: 'Montserrat', sans-serif; font-size: 15px; color: #f8f6e3; line-height: 1.8; margin: 0;">
+                    Defined by sheer tenacity and a relentless work ethic. A pragmatic individual dedicated to constructing a future through unwavering diligence and strategic effort, constantly pushing boundaries to achieve professional and personal excellence.
+                </p>
+            </td>
+        </tr>
+
+        <tr><td colspan="2" height="40"></td></tr>
+    </table>
+
+    <br><br>
+
+    <table width="85%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#5e0013" style="border-radius: 20px; border: 1px solid #800020; overflow: hidden; margin: 0 auto;">
+        
+        <tr><td colspan="2" height="40"></td></tr>
+
+        <tr>
+            <td width="60%" valign="middle" style="padding: 0 40px;">
+                <div style="text-align: right;">
+                    <font face="Montserrat" size="2" color="#d4af37">FOURTH SIBLING • 15 YEARS</font><br>
+                    <font face="Cormorant Garamond" size="6" color="#ffffff"><b>Nurin Qistina Balqis</b></font><br>
+                    <font face="Helvetica" size="2" color="#cccccc">Binti Shaik Alaudeen</font>
+                </div>
+                <br>
+                <hr width="100%" size="1" color="#d4af37">
+                <br>
+                <font face="Montserrat" size="4" color="#d4af37"><b>The Sentimental Anchor</b></font>
+                <br><br>
+                <p style="text-align: justify; direction: rtl; font-family: 'Montserrat', sans-serif; font-size: 15px; color: #f8f6e3; line-height: 1.8; margin: 0;">
+                    Characterized by a profound emotional attachment and an endearing need for proximity. Her affectionate nature is a testament to her deep-rooted loyalty, serving as the emotional glue that binds the siblings together.
+                </p>
+            </td>
+
+            <td width="40%" align="center" style="padding-right: 40px;">
+                <img src="images/nurin.jpeg" width="300" height="400" class="neon-image" style="object-fit:cover;">
+            </td>
+        </tr>
+
+        <tr><td colspan="2" height="40"></td></tr>
+    </table>
+
+    <br><br>
+
+    <table width="85%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#4d0011" style="border-radius: 20px; border: 1px solid #6b0017; overflow: hidden; margin: 0 auto;">
+        
+        <tr><td colspan="2" height="40"></td></tr>
+
+        <tr>
+            <td width="40%" align="center" style="padding-left: 40px;">
+                <img src="images/jihah.jpeg" width="300" height="400" class="neon-image" style="object-fit:cover;">
+            </td>
+            
+            <td width="60%" valign="middle" style="padding: 0 40px;">
+                <font face="Montserrat" size="2" color="#d4af37">YOUNGEST SIBLING • 13 YEARS</font><br>
+                <font face="Cormorant Garamond" size="6" color="#ffffff"><b>Siti Nabilah Najihah</b></font><br>
+                <font face="Helvetica" size="2" color="#cccccc">Binti Shaik Alaudeen</font>
+                <br><br>
+                <hr width="100%" size="1" color="#d4af37">
+                <br>
+                <font face="Montserrat" size="4" color="#d4af37"><b>The Satirical Observer</b></font>
+                <br><br>
+                <p style="text-align: justify; font-family: 'Montserrat', sans-serif; font-size: 15px; color: #f8f6e3; line-height: 1.8; margin: 0;">
+                    A sharp-witted provocateur whose sarcasm cuts through the mundane. Her penchant for verbal sparring reveals an acute intelligence and a playful, albeit combative, spirit that keeps the family dynamic constantly engaging and lively.
+                </p>
+            </td>
+        </tr>
+
+        <tr><td colspan="2" height="40"></td></tr>
+    </table>
+
+    <br><br>
+
+    <footer id="contact">
+        <table width="100%" bgcolor="#000000" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td align="center" style="padding: 60px 10%;">
+                    
+                    <table width="70%" cellpadding="0" cellspacing="0" border="0" align="center" style="margin-bottom: 30px;">
+                        <tr>
+                            <td width="20%" align="center"><a href="https://www.linkedin.com/in/ahmad-amer-muqtaar" target="_blank" style="text-decoration:none;"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="50" height="50" style="display:block; margin:0 auto 10px;"><font face="Helvetica, sans-serif" size="2" color="#d4af37" style="letter-spacing:2px; font-weight:bold;">LinkedIn</font></a></td>
+                            <td width="20%" align="center"><a href="https://www.instagram.com/simp4muqh" target="_blank" style="text-decoration:none;"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="50" height="50" style="display:block; margin:0 auto 10px;"><font face="Helvetica, sans-serif" size="2" color="#d4af37" style="letter-spacing:2px; font-weight:bold;">Instagram</font></a></td>
+                            <td width="20%" align="center"><a href="https://www.tiktok.com/@meerguwd" target="_blank" style="text-decoration:none;"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" width="50" height="50" style="display:block; margin:0 auto 10px;"><font face="Helvetica, sans-serif" size="2" color="#d4af37" style="letter-spacing:2px; font-weight:bold;">TikTok</font></a></td>
+                            <td width="20%" align="center"><a href="https://wa.me/60143948538" target="_blank" style="text-decoration:none;"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="50" height="50" style="display:block; margin:0 auto 10px;"><font face="Helvetica, sans-serif" size="2" color="#d4af37" style="letter-spacing:2px; font-weight:bold;">WhatsApp</font></a></td>
+                            <td width="20%" align="center"><a href="mailto:muqtaaralaudeen@gmail.com" style="text-decoration:none;"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="50" height="50" style="display:block; margin:0 auto 10px;"><font face="Helvetica, sans-serif" size="2" color="#d4af37" style="letter-spacing:2px; font-weight:bold;">Email</font></a></td>
+                        </tr>
+                    </table>
+                    
+                    <font face="Cormorant Garamond, serif" size="6" style="background: linear-gradient(to bottom, #d4af37 0%, #f4e4a6 30%, #fffbea 50%, #f4e4a6 70%, #d4af37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 2px 10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3); display: block; margin-bottom: 20px;">
+                        "Organizing Chaos. Designing Solutions."
+                    </font>
+                    
+                    <font face="Montserrat, sans-serif" size="2" color="#c0c0c0">
+                        © 2025 Ahmad Amer Muqtaar. All Rights Reserved.
+                    </font>
+                    
+                </td>
+            </tr>
+        </table>
+    </footer>
+
+</body>
+</html>
