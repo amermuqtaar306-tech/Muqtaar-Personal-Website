@@ -1,0 +1,726 @@
+<html>
+<head>
+    <title>Ahmad Amer Muqtaar - The Visionary Luxe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap');
+        
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        
+        body{
+            font-family:'Montserrat', sans-serif;
+            background:#800020;
+            color:#ffffff;
+            overflow-x:hidden;
+        }
+        
+        #loading{
+            position:fixed;
+            width:100%;
+            height:100vh;
+            background:#000;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            z-index:9999;
+            animation:fadeOut 0.5s ease 2s forwards;
+        }
+        
+        #loading h1{
+            font-family:'Tangerine', cursive;
+            font-size:120px;
+            background:linear-gradient(to bottom, #d4af37 0%, #f4e4a6 30%, #fffbea 50%, #f4e4a6 70%, #d4af37 100%);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+            text-shadow:0 2px 10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+            animation:pulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes fadeOut{
+            to{
+                opacity:0;
+                visibility:hidden;
+            }
+        }
+        
+        @keyframes pulse{
+            0%, 100%{transform:scale(1);}
+            50%{transform:scale(1.05);}
+        }
+        
+        .logo{
+            position:fixed;
+            top:30px;
+            left:35px;
+            z-index:9998;
+            font-family:'Tangerine', cursive;
+            font-size:40px;
+            background:linear-gradient(to bottom, #d4af37 0%, #f4e4a6 30%, #fffbea 50%, #f4e4a6 70%, #d4af37 100%);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+            text-shadow:0 2px 10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+            font-weight:bold;
+            border:2px solid #d4af37;
+            padding:5px 16px;
+            border-radius:10px;
+            background-color:linear-gradient(145deg, #f5f5f5 0%, #ffffff 50%, #f0f0f0 100%);
+            box-shadow:0 3px 12px rgba(212, 175, 55, 0.25), inset 0 1px 3px rgba(255,255,255,0.8);
+        }
+        
+        nav{
+            position:fixed;
+            top:0;
+            right:10px;
+            padding:25px 40px;
+            z-index:9998;
+            background:rgba(128, 0, 32, 0.95);
+            backdrop-filter:blur(10px);
+            border-radius:0 0 35px 35px;
+        }
+        
+        nav ul{
+            list-style:none;
+            display:flex;
+            gap:20px;
+            margin:0;
+        }
+        
+        nav ul li a{
+            font-family:'Helvetica', sans-serif;
+            font-size:13px;
+            letter-spacing:2px;
+            color:#d4af37;
+            text-decoration:none;
+            font-weight:bold;
+            transition:all 0.3s ease;
+            padding:10px 16px;
+            border:2px solid transparent;
+            border-radius:25px;
+        }
+        
+        nav ul li a:hover{
+            color:#ffffff;
+            border:2px solid #d4af37;
+            background:rgba(212, 175, 55, 0.1);
+            box-shadow:0 0 25px rgba(212, 175, 55, 0.8), 0 0 45px rgba(212, 175, 55, 0.6);
+        }
+        
+        header{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:0 10%;
+            position:relative;
+            background:#800020;
+        }
+        
+        .hero-content{
+            flex:1;
+            z-index:2;
+        }
+        
+        .hero-content h1{
+            font-family:'Cormorant Garamond', serif;
+            font-size:110px;
+            background:linear-gradient(to bottom, #d4af37 0%, #f4e4a6 30%, #fffbea 50%, #f4e4a6 70%, #d4af37 100%);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+            text-shadow:0 2px 10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+            margin-bottom:20px;
+            line-height:1.2;
+        }
+        
+        .hero-content h2{
+            font-family:'Helvetica', sans-serif;
+            font-size:18px;
+            letter-spacing:8px;
+            color:#d4af37;
+            font-weight:bold;
+            margin-bottom:30px;
+        }
+        
+        .typewriter{
+            font-family:'Montserrat', sans-serif;
+            font-size:24px;
+            color:#c0c0c0;
+            height:40px;
+        }
+        
+        .hero-image{
+            flex:1;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        
+        .hero-image-placeholder{
+            width:400px;
+            height:500px;
+            background:linear-gradient(135deg, #c0c0c0 0%, #ffffff 50%, #c0c0c0 100%);
+            border-radius:35px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:18px;
+            color:#666;
+            box-shadow:0 0 35px rgba(212, 175, 55, 0.7), 0 0 55px rgba(212, 175, 55, 0.5), 0 20px 60px rgba(0,0,0,0.3);
+            border:3px solid rgba(212, 175, 55, 0.4);
+        }
+        
+        .statement{
+            min-height:60vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:100px 10%;
+            background:#6b0017;
+        }
+        
+        .statement h2{
+            font-family:'Helvetica', sans-serif;
+            font-size:48px;
+            font-weight:bold;
+            color:#ffffff;
+            margin-bottom:60px;
+            letter-spacing:4px;
+        }
+        
+        .statement blockquote{
+            font-family:'Cormorant Garamond', serif;
+            font-size:62px;
+            background:linear-gradient(to bottom, #d4af37 0%, #f4e4a6 30%, #fffbea 50%, #f4e4a6 70%, #d4af37 100%);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+            text-shadow:0 2px 10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+            margin-bottom:20px;
+            font-style:italic;
+        }
+        
+        .statement cite{
+            font-family:'Montserrat', sans-serif;
+            font-size:16px;
+            color:#c0c0c0;
+            font-style:normal;
+        }
+        
+        .neon-image{
+            transition: all 0.3s ease;
+            border: 3px solid #d4af37;
+            border-radius: 15px;
+        }
+        
+        .neon-image:hover{
+            box-shadow: 0 0 20px #d4af37, 0 0 40px #d4af37, 0 0 60px #d4af37, 0 0 80px #d4af37;
+            transform: scale(1.02);
+        }
+        
+        .marquee-container{
+            background:#4d0011;
+            padding:60px 10%;
+            overflow:hidden;
+        }
+        
+        .marquee-container h2{
+            font-family:'Helvetica', sans-serif;
+            font-size:32px;
+            text-align:center;
+            color:#d4af37;
+            margin-bottom:40px;
+            letter-spacing:4px;
+            font-weight:bold;
+        }
+        
+        .marquee{
+            font-family:'Helvetica', sans-serif;
+            font-size:16px;
+            font-weight:bold;
+            color:#ffffff;
+            letter-spacing:3px;
+            text-align:center;
+            line-height:1.8;
+            padding:0 5%;
+        }
+        
+        .bio-section{
+            padding:100px 10%;
+            text-align:center;
+            background:#800020;
+        }
+        
+        .bio-section p{
+            font-family:'Montserrat', sans-serif;
+            font-size:20px;
+            line-height:2;
+            color:#ffffff;
+            max-width:900px;
+            margin:0 auto 50px;
+        }
+        
+        .cta-button{
+            display:inline-block;
+            padding:20px 50px;
+            background:linear-gradient(45deg, #d4af37 0%, #f8f6e3 50%, #d4af37 100%);
+            color:#000;
+            font-family:'Helvetica', sans-serif;
+            font-size:18px;
+            font-weight:bold;
+            letter-spacing:3px;
+            text-decoration:none;
+            border-radius:50px;
+            transition:all 0.3s ease;
+            box-shadow:0 0 25px rgba(212, 175, 55, 0.6), 0 10px 30px rgba(212, 175, 55, 0.4);
+            border:none;
+            cursor:pointer;
+        }
+        
+        .cta-button:hover{
+            transform:translateY(-5px);
+            box-shadow:0 0 40px rgba(212, 175, 55, 0.9), 0 0 60px rgba(212, 175, 55, 0.7), 0 15px 40px rgba(212, 175, 55, 0.6);
+        }
+        
+        footer{
+            background:#000;
+            color:#fff;
+            padding:60px 10%;
+            text-align:center;
+        }
+        
+        .social-icons{
+            margin-bottom:30px;
+            display:flex;
+            justify-content:center;
+            gap:40px;
+        }
+        
+        .social-icons a{
+            display:inline-block;
+            font-size:16px;
+            color:#d4af37;
+            transition:all 0.3s ease;
+            text-decoration:none;
+            font-family:'Helvetica', sans-serif;
+            letter-spacing:2px;
+            font-weight:bold;
+        }
+        
+        .social-icons a:hover{
+            transform:scale(1.1);
+            color:#f8f6e3;
+        }
+        
+        .social-icons img{
+            width:50px;
+            height:50px;
+            display:block;
+            margin:0 auto 10px;
+            transition:transform 0.3s ease;
+        }
+        
+        .social-icons a:hover img{
+            transform:translateY(-5px);
+        }
+        
+        footer blockquote{
+            font-family:'Cormorant Garamond', serif;
+            font-size:38px;
+            background:linear-gradient(to bottom, #d4af37 0%, #f4e4a6 30%, #fffbea 50%, #f4e4a6 70%, #d4af37 100%);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+            text-shadow:0 2px 10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
+            margin-bottom:20px;
+        }
+        
+        footer p{
+            font-family:'Montserrat', sans-serif;
+            font-size:14px;
+            color:#c0c0c0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="loading">
+        <h1>Muqtaar</h1>
+    </section>
+
+    <h1 class="logo">Muqtaar</h1>
+
+    <nav>
+        <ul>
+            <li><a href="biodata.html">BIODATA</a></li>
+            <li><a href="education.html">EDUCATION</a></li>
+            <li><a href="experience.html">EXPERIENCE</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="family.html">FAMILY</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <header id="biodata">
+        <section class="hero-content">
+            <h1>Ahmad Amer<br>Muqtaar</h1>
+            <h2>INFORMATION MANAGEMENT • UITM • VISIONARY</h2>
+            <p class="typewriter" style="font-size:24px; color:#c0c0c0;">I am a <span style="color:#fff; border-bottom:2px solid #d4af37;">Visionary & Creator</span></p>
+        </section>
+        <section class="">
+            <img src="images/IMG_BERJALAN FORMAL.JPEG" class="hero-image-placeholder" style="object-fit: cover;">
+        </section>
+    </header>
+
+    <section class="statement">
+        <h2>ORGANIZING CHAOS. DESIGNING SOLUTIONS.</h2>
+        <blockquote>"Do not pray for easy lives, pray to be Stronger Men."</blockquote>
+        <cite>— John F. Kennedy</cite>
+    </section>
+
+    <section id="education" style="padding: 100px 10%; background: #800020;">
+        <h1 align="center"><font color="#d4af37">SMALL EXPOSURE ABOUT ME</font></h1>
+        <h3 align="center"><font color="#f8f6e3">The Narrative</font></h3>
+        <center><hr width="100%" size="3" color="#d4af37"></center>
+        <br><br>
+
+<center> 
+        <table width="85%" align="center" border="2" cellspacing="0" cellpadding="20" bordercolor="#d4af37" bgcolor="#4d0011">
+            <tr bgcolor="#6b0017">
+                <td colspan="3" align="center">
+                    <font color="#d4af37" size="5" face="Helvetica"><b>PROFESSIONAL PROFILE</b></font>
+                </td>
+            </tr>
+            
+            <tr>
+                <td width="35%" valign="top">
+                    <font color="#d4af37" size="4"><b>Full Name</b></font>
+                </td>
+                <td width="5%" valign="top">
+                    <font color="#f8f6e3" size="4"><b>:</b></font>
+                </td>
+                <td width="60%" valign="top">
+                    <font color="#ffffff" size="3">Ahmad Amer Muqtaar Bin Shaik Alaudeen</font>
+                </td>
+            </tr>
+            
+            <tr>
+                <td valign="top">
+                    <font color="#d4af37" size="4"><b>Preferred Name</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#f8f6e3" size="4"><b>:</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#ffffff" size="3">Meer</font>
+                </td>
+            </tr>
+            
+            <tr>
+                <td valign="top">
+                    <font color="#d4af37" size="4"><b>Location</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#f8f6e3" size="4"><b>:</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#ffffff" size="3">Seremban, Negeri Sembilan, Malaysia</font>
+                </td>
+            </tr>
+            
+            <tr>
+                <td valign="top">
+                    <font color="#d4af37" size="4"><b>Academic Status</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#f8f6e3" size="4"><b>:</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#ffffff" size="3">Final Year Diploma Student in Information Management, UiTM Rembau</font>
+                </td>
+            </tr>
+            
+            <tr>
+                <td valign="top">
+                    <font color="#d4af37" size="4"><b>Current Roles</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#f8f6e3" size="4"><b>:</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#ffffff" size="3">
+                    • Sales Advisor at MOVON Sdn. Bhd.<br>
+                    • Deputy Secretary of Information Management Community (IMCo)
+                    </font>
+                </td>
+            </tr>
+            
+            <tr>
+                <td valign="top">
+                    <font color="#d4af37" size="4"><b>Professional Demeanor</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#f8f6e3" size="4"><b>:</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#ffffff" size="3">Known among peers for a composed and relaxed approach to challenges, earning the informal designation 'MatKool' within professional circles</font>
+                </td>
+            </tr>
+            
+            <tr>
+                <td valign="top">
+                    <font color="#d4af37" size="4"><b>Core Specializations</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#f8f6e3" size="4"><b>:</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#ffffff" size="3">
+                    • Marketing Content Generation<br>
+                    • Video Production & Cinematography
+                    </font>
+                </td>
+            </tr>
+            
+            <tr>
+                <td valign="top">
+                    <font color="#d4af37" size="4"><b>Personal Interests</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#f8f6e3" size="4"><b>:</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#ffffff" size="3">
+                    • Football Enthusiast<br>
+                    • Horror-Genre Podcast Aficionado
+                    </font>
+                </td>
+            </tr>
+            
+            <tr bgcolor="#6b0017">
+                <td colspan="3" align="center">
+                    <font color="#f8f6e3" size="3" face="Montserrat">
+                    <i>"Meer combines technical proficiency in marketing and media production with a calm, strategic approach to professional development. Currently advancing expertise in Information Management while maintaining active roles in both commercial and academic leadership."</i>
+                    </font>
+                </td>
+            </tr>
+        </table>
+</center>
+        
+        <br><br>
+        
+        <h2 align="center"><font color="#d4af37">LOCATION & RESIDENCE</font></h2>
+        <h3 align="center"><font color="#f8f6e3">My Base of Living</font></h3>
+        <center><hr width="100%" size="3" color="#d4af37"></center>
+        <br><br>
+        
+<center>
+        <table width="85%" align="center" border="0" cellspacing="30" cellpadding="10">
+            <tr>
+                <td width="50%" align="center" valign="top">
+                    <img src="images/IMG_SENDIRI NEW.JPEG" width="100%" height="400" class="neon-image">
+                    <br><br>
+                    <font color="#f8f6e3" size="3"><b>Front View of Residence</b></font>
+                </td>
+                
+                <td width="50%" align="center" valign="top">
+                    <img src="images/IMG_JIRAN NEW.JPEG" width="100%" height="400" class="neon-image">
+                    <br><br>
+                    <font color="#f8f6e3" size="3"><b>Neighborhood View</b></font>
+                </td>
+            </tr>
+        </table>
+</center>
+        
+        <br><br>
+        
+    <center>
+        <table width="80%" align="center" border="0" cellspacing="15" cellpadding="20">
+            <tr>
+                <td width="30%" valign="top">
+                    <font color="#d4af37" size="4"><b>Residential Address</b></font>
+                </td>
+                <td width="5%" valign="top">
+                    <font color="#f8f6e3" size="4"><b>:</b></font>
+                </td>
+                <td width="65%" valign="top">
+                    <font color="#ffffff" size="3">1523, Jln Warisan Puteri A53, Seremban, Negeri Sembilan</font>
+                </td>
+            </tr>
+            
+            <tr>
+                <td valign="top">
+                    <font color="#d4af37" size="4"><b>City</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#f8f6e3" size="4"><b>:</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#ffffff" size="3">Seremban, Negeri Sembilan</font>
+                </td>
+            </tr>
+            
+            <tr>
+                <td valign="top">
+                    <font color="#d4af37" size="4"><b>Region</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#f8f6e3" size="4"><b>:</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#ffffff" size="3">Central Region, Malaysia</font>
+                </td>
+            </tr>
+            
+            <tr>
+                <td valign="top">
+                    <font color="#d4af37" size="4"><b>Coordinates</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#f8f6e3" size="4"><b>:</b></font>
+                </td>
+                <td valign="top">
+                    <font color="#ffffff" size="3">2.75401°N, 101.9858032°E</font>
+                </td>
+            </tr>
+        </table>
+    </center>
+
+        <br><br>
+        
+        <center>
+        <font color="#ffffff" size="3">
+        <p style="padding: 0 15%; line-height: 2;">
+        Based in the heart of Seremban, Negeri Sembilan, my residence at Jalan Warisan Puteri serves as the foundation for my professional and academic pursuits. This strategic location provides convenient access to UiTM Rembau, MOVON Sdn. Bhd., and various opportunities throughout the central region of Malaysia.
+        </p>
+        </font>
+        </center>
+        
+        <br><br>
+        
+    <center>
+        <table width="85%" align="center" border="3" cellspacing="0" cellpadding="10" bordercolor="#d4af37">
+            <tr bgcolor="#4d0011">
+                <td align="center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.9864394837544!2d101.9832283!3d2.75401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdde7e8736aa91%3A0xed1ca9aa8b7cdb13!2s1523%2C%20Jln%20Warisan%20Puteri%20A53%2C%20Seremban%2C%20Negeri%20Sembilan!5e0!3m2!1sen!2smy!4v1640000000000!5m2!1sen!2smy" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </td>
+            </tr>
+            <tr bgcolor="#6b0017">
+                <td align="center">
+                    <font color="#d4af37" size="3"><b>Interactive Map: My Location in Seremban</b></font>
+                    <br>
+                    <font color="#f8f6e3" size="2">
+                    <a href="https://www.google.com/maps/place/1523,+Jln+Warisan+Puteri+A53,+Seremban,+Negeri+Sembilan/@2.75401,101.9832283,17z/data=!3m1!4b1!4m6!3m5!1s0x31cdde7e8736aa91:0xed1ca9aa8b7cdb13!8m2!3d2.75401!4d101.9858032!16s%2Fg%2F11jlp3jrxn?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color:#f8f6e3; text-decoration:underline;">View Full Map on Google Maps</a>
+                    </font>
+                </td>
+            </tr>
+        </table>
+    </center>
+        
+        <br><br>
+        
+        <h2 align="center"><font color="#d4af37">VISUAL HIGHLIGHTS</font></h2>
+        <h3 align="center"><font color="#f8f6e3">My Residence & Neighborhood</font></h3>
+        <center><hr width="100%" size="3" color="#d4af37"></center>
+        <br><br>
+        
+    <center>
+        <table width="85%" align="center" border="0" cellspacing="20" cellpadding="10">
+            <tr>
+                <td width="50%" align="center" valign="top" rowspan="2">
+                    <img src="images/IMG_5645.JPG" width="100%" height="650" border="5" style="border-color:#d4af37; border-radius:15px;">
+                    <br><br>
+                    <font color="#f8f6e3" size="3"><b>Interactive Map Location</b></font>
+                    <br>
+                    <font color="#ffffff" size="2"><i>Pinpoint view of 1523, Jln Warisan Puteri A53, Seremban - My strategic location in the heart of Bandar Warisan Puteri residential area</i></font>
+                </td>
+                
+                <td width="50%" align="center" valign="top">
+                    <img src="images/IMG_AKU.JPG" width="100%" height="315" border="5" style="border-color:#d4af37; border-radius:15px;">
+                    <br><br>
+                    <font color="#f8f6e3" size="3"><b>Home Entrance View</b></font>
+                    <br>
+                    <font color="#ffffff" size="2"><i>Front view of my residence - A modern double-storey terrace house with contemporary design elements and comfortable living spaces</i></font>
+                </td>
+            </tr>
+            
+            <tr>
+                <td align="center" valign="top">
+                    <img src="images/IMG_5644.JPG" width="100%" height="315" border="5" style="border-color:#d4af37; border-radius:15px;">
+                    <br><br>
+                    <font color="#f8f6e3" size="3"><b>Neighborhood Perspective</b></font>
+                    <br>
+                    <font color="#ffffff" size="2"><i>Street view showcasing the peaceful and well-maintained residential community of Bandar Warisan Puteri</i></font>
+                </td>
+            </tr>
+        </table>
+    </center>
+        
+        <br><br>
+        
+        <center>
+        <table width="70%" align="center" border="0" cellpadding="30" bgcolor="#4d0011">
+            <tr>
+                <td align="center">
+                    <font color="#d4af37" size="4" face="Cormorant Garamond"><i>"I don't just study Information Management; I curate experiences. With 1+ years of work experience and active involvement in the Student Representative Council, I blend technical precision with the art of leadership and management."</i></font>
+                    <br><br>
+                    <font color="#ffffff" size="3">— Ahmad Amer Muqtaar</font>
+                </td>
+            </tr>
+        </table>
+        </center>
+        
+        <br><br>
+    </section>
+
+    <section class="marquee-container">
+        <h2>CORE EXPERTISE</h2>
+        <p class="marquee">
+            RECORDS MANAGEMENT • PROGRAM AND EVENT COORDINATION • ADMINISTRATIVE MANAGEMENT • DATA MANAGEMENT • PROCUREMENT AND VENDOR MANAGEMENT • INFORMATION SYSTEMS • LIBRARY MANAGEMENT • C++ • HTML • MYSQL • CANVA DESIGN • MICROSOFT OFFICE • GOOGLE DOCS • SPREADSHEETS • GOOGLE DRIVE
+        </p>
+    </section>
+
+    <section class="bio-section">
+        <p>A proactive and enthusiastic leader curating experiences in Seremban. With a track record managing 1+ years of work experience and serving the Student Representative Council arena, I blend technical precision in C++ & HTML with the art of management. I don't just study Information Management; I curate experiences.</p>
+        <a href="images/resume.pdf" download="Muqtaar_Resume" class="cta-button">DOWNLOAD RESUME / CV</a>
+    </section>
+
+    <footer id="contact">
+        <article class="social-icons">
+            <a href="https://www.linkedin.com/in/ahmad-amer-muqtaar-bin-shaik-alaudeen-7883a339b" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                LinkedIn
+            </a>
+            <a href="https://www.instagram.com/simp4muqh" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+                Instagram
+            </a>
+            <a href="https://www.tiktok.com/@meerguwd" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+                TikTok
+            </a>
+            <a href="https://wa.me/60143948538" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+                WhatsApp
+            </a>
+            <a href="mailto:muqtaaralaudeen@gmail.com">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+                Email
+            </a>
+        </article>
+        <blockquote>"Organizing Chaos. Designing Solutions."</blockquote>
+        <p>© 2025 Ahmad Amer Muqtaar. All Rights Reserved.</p>
+    </footer>
+    
+</body>
+</html>
