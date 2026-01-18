@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Education - Ahmad Amer Muqtaar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Tangerine:wght@700&family=Cormorant+Garamond:wght@700&family=Helvetica&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #800020;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* LOGO */
+        .logo {
+            position: fixed; top: 30px; left: 35px; z-index: 9998;
+            font-family: 'Tangerine', cursive; font-size: 40px;
+            background: linear-gradient(to bottom, #d4af37 0%, #f4e4a6 30%, #fffbea 50%, #f4e4a6 70%, #d4af37 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            border: 2px solid #d4af37; padding: 5px 16px; border-radius: 10px;
+            background-color: rgba(0,0,0,0.2); box-shadow: 0 3px 12px rgba(212, 175, 55, 0.25);
+        }
+
+        /* NAVIGATION */
+        .nav-container {
+            position: fixed; top: 0; right: 10px; padding: 25px 40px; z-index: 9998;
+            background: rgba(128, 0, 32, 0.95); backdrop-filter: blur(10px);
+            border-radius: 0 0 35px 35px;
+        }
+
+        .nav-link {
+            font-family: 'Helvetica', sans-serif; font-size: 13px; letter-spacing: 2px;
+            color: #d4af37; text-decoration: none; font-weight: bold;
+            padding: 10px 16px; border: 2px solid transparent; border-radius: 25px;
+            display: inline-block; margin: 0 5px; transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ffffff; border: 2px solid #d4af37;
+            background: rgba(212, 175, 55, 0.2); box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* IMAGES & MAPS */
+        .neon-image {
+            transition: all 0.3s ease; border: 3px solid #d4af37; border-radius: 15px;
+            display: block; 
+        }
+        .neon-image:hover {
+            box-shadow: 0 0 20px #d4af37, 0 0 40px #d4af37; transform: scale(1.02);
+        }
+
+        .map-frame {
+            border: 2px solid #d4af37; border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        .map-btn {
+            text-decoration: none; color: #000; font-size: 13px; font-weight: bold;
+            background: linear-gradient(45deg, #d4af37, #f8f6e3);
+            padding: 10px 20px; border-radius: 50px;
+            display: inline-block; margin-top: 15px;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); transition: transform 0.3s;
+        }
+        .map-btn:hover { transform: translateY(-3px); box-shadow: 0 0 20px rgba(212, 175, 55, 0.8); }
+
+        /* --- CSS HYBRID MENU & RESPONSIVE --- */
+
+    /* Asalnya sorok menu phone */
+    .mobile-only { display: none; }
+    
+    /* Bila masuk Phone (Skrin Kecil) */
+    @media screen and (max-width: 768px) {
+        /* Sorok menu laptop */
+        .desktop-only { display: none; }
+
+        /* Tunjuk butang menu phone */
+        .mobile-only {
+            display: block;
+            position: fixed;
+            top: 20px; right: 20px;
+            z-index: 9999; text-align: right;
+        }
+
+        /* Style butang MENU */
+        summary {
+            background: rgba(128, 0, 32, 0.95);
+            color: #d4af37;
+            padding: 10px 20px;
+            border: 2px solid #d4af37;
+            border-radius: 20px;
+            font-weight: bold;
+            font-family: 'Helvetica', sans-serif;
+            cursor: pointer;
+            list-style: none; display: inline-block;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        
+        /* Table dalam menu phone */
+        .mobile-only table {
+            margin-top: 10px;
+            background: rgba(0, 0, 0, 0.95);
+            border-radius: 10px;
+        }
+        
+        /* Reset Logo */
+        .logo {
+            position: static !important;
+            display: block; text-align: center;
+            margin: 20px auto; width: 100%;
+        }
+
+        /* Fix Gambar & Map */
+        img { max-width: 100% !important; height: auto !important; }
+        iframe { max-width: 100% !important; }
+        .map-frame { width: 100% !important; }
+        
+        /* --- FIX: CONTENT STACKING (Tanpa kacau Footer) --- */
+        
+        /* 1. Paksa table utama jadi lebar penuh */
+        table { width: 100% !important; }
+
+        /* 2. Content Body: Susun menegak (Stack) */
+        /* Simbol '>' bermaksud: Cuma ambil table yang terus di bawah Body */
+        body > table td { 
+            display: block; 
+            width: 100% !important; 
+            text-align: center !important; 
+            padding: 10px !important; 
+        }
+
+        /* 3. Footer: KEKALKAN seperti asal (Jangan stack) */
+        footer td {
+            display: table-cell !important;
+            width: auto !important;
+            padding: 5px !important; /* Padding kecil untuk ikon */
+        }
+        
+        /* Kecilkan Font Tajuk */
+        font[size="7"], font[size="6"] { font-size: 35px !important; }
+        font[size="4"] { font-size: 18px !important; }
+    }
+    </style>
+</head>
+
+<body bgcolor="#800020">
+
+    <h1 class="logo">Muqtaar</h1>
+
+    <table class="nav-container desktop-only" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>
+            <a href="muqtaarhomepage.html" class="nav-link">HOME</a>
+            <a href="biodata.html" class="nav-link">BIODATA</a>
+            <a href="education.html" class="nav-link active">EDUCATION</a>
+            <a href="experience.html" class="nav-link">EXPERIENCE</a>
+            <a href="gallery.html" class="nav-link">GALLERY</a>
+            <a href="family.html" class="nav-link">FAMILY</a>
+            <a href="contact.html" class="nav-link">CONTACT</a>
+        </td>
+    </tr>
+</table>
+
+<details class="mobile-only">
+    <summary>☰ MENU</summary>
+    <table bgcolor="#4d0011" border="1" bordercolor="#d4af37" cellpadding="10" cellspacing="0" width="200">
+        <tr><td align="center"><a href="muqtaarhomepage.html" class="nav-link">HOME</a></td></tr>
+        <tr><td align="center"><a href="biodata.html" class="nav-link">BIODATA</a></td></tr>
+        <tr><td align="center"><a href="education.html" class="nav-link active">EDUCATION</a></td></tr>
+        <tr><td align="center"><a href="experience.html" class="nav-link">EXPERIENCE</a></td></tr>
+        <tr><td align="center"><a href="gallery.html" class="nav-link">GALLERY</a></td></tr>
+        <tr><td align="center"><a href="family.html" class="nav-link">FAMILY</a></td></tr>
+        <tr><td align="center"><a href="contact.html" class="nav-link">CONTACT</a></td></tr>
+    </table>
+</details>
+    <br><br><br><br><br>
+
+    <table width="100%" cellpadding="20" cellspacing="0">
+        <tr>
+            <td align="center">
+                <font face="Helvetica, sans-serif" size="4" color="#d4af37" letter-spacing="5">ACADEMIC CHRONICLE</font>
+                <br>
+                <font face="Cormorant Garamond, serif" size="7" color="#d4af37"><b>Scholastic Journey</b></font>
+                <br><hr width="150" size="2" color="#d4af37">
+            </td>
+        </tr>
+    </table>
+    <br>
+
+    <table width="85%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#4d0011" style="border-radius: 20px; border: 1px solid #6b0017; overflow: hidden; margin: 0 auto;">
+        
+        <tr><td colspan="2" height="40"></td></tr>
+
+        <tr>
+            <td width="55%" valign="middle" style="padding: 0 40px;">
+                <font face="Tangerine" size="6" color="#d4af37">Tertiary Education</font><br>
+                <font face="Cormorant Garamond" size="6" color="#ffffff"><b>UiTM Kampus Rembau</b></font><br>
+                <font face="Montserrat" size="4" color="#d4af37"><b>Diploma in Information Management</b></font>
+                <br><br>
+                <font face="Montserrat" size="3" color="#ffffff">
+                    <i>Semester 5 | CGPA: 3.43</i>
+                </font>
+                <br><br>
+                <hr width="100%" size="1" color="#d4af37">
+                <br>
+                <p style="text-align: justify; font-family: 'Montserrat', sans-serif; font-size: 15px; color: #f8f6e3; line-height: 1.8; margin: 0;">
+                    Currently pursuing a diploma with a specialized focus on <b>Web Content Development</b> and <b>System Analysis</b>. Actively contributing to the student body through the <b>Outreach Program for Information Agencies</b> and serving as the Deputy Secretary for the Information Management Community (IMCo). Proficient in HTML and C++ programming languages.
+                </p>
+            </td>
+
+            <td width="45%" align="center" style="padding-right: 40px;">
+                <img src="images/Gambar diploma.jpeg" width="320" height="420" class="neon-image" style="object-fit:cover; box-shadow: 5px 5px 15px rgba(0,0,0,0.5);">
+            </td>
+        </tr>
+
+        <tr><td colspan="2" height="40"></td></tr>
+
+        <tr bgcolor="#3d000e">
+            <td align="center" valign="top" style="padding: 40px;">
+                <font face="Montserrat" size="2" color="#d4af37" letter-spacing="2"><b>CAMPUS LOCATION</b></font><br><br>
+                <iframe src="images/maps uitm rembau.jpeg" width="100%" height="250" class="map-frame" style="border:0;"></iframe>
+                <br>
+                <a href="https://www.google.com/maps/place/UiTM+Rembau/@2.5109066,102.0603752,17z/data=!3m1!4b1!4m6!3m5!1s0x31cdfd8ea33825ad:0x5aa3255f8a169f1c!8m2!3d2.5109066!4d102.0629501!16s%2Fg%2F11bw2g7_ys?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-btn">
+                    <i class="fas fa-map-marked-alt"></i> View Interactive Map
+                </a>
+            </td>
+            <td align="center" valign="top" style="padding: 40px;">
+                <font face="Montserrat" size="2" color="#d4af37" letter-spacing="2"><b>CAMPUS VIEW</b></font><br><br>
+                <img src="images/gambar kampus 1.jpeg" width="100%" height="250" class="neon-image" style="object-fit:cover;">
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <table width="85%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#5e0013" style="border-radius: 20px; border: 1px solid #800020; overflow: hidden; margin: 0 auto;">
+        
+        <tr><td colspan="2" height="40"></td></tr>
+
+        <tr>
+            <td width="45%" align="center" style="padding-left: 40px;">
+                <img src="images/gambar mcplus.jpeg" width="320" height="420" class="neon-image" style="object-fit:cover; box-shadow: 5px 5px 15px rgba(0,0,0,0.5);">
+            </td>
+
+            <td width="55%" valign="middle" style="padding: 0 40px;">
+                <div style="text-align: right;">
+                    <font face="Tangerine" size="6" color="#d4af37">Secondary Education</font><br>
+                    <font face="Cormorant Garamond" size="6" color="#ffffff"><b>SMK Pendeta Za'Ba</b></font><br>
+                    <font face="Montserrat" size="4" color="#d4af37"><b>SPM 2022 (5A 1B 1C+ 1D)</b></font>
+                </div>
+                <br>
+                <hr width="100%" size="1" color="#d4af37">
+                <br>
+                <p style="text-align: justify; font-family: 'Montserrat', sans-serif; font-size: 15px; color: #f8f6e3; line-height: 1.8; margin: 0;">
+                    Graduated from the <b>Produksi Reka Tanda</b> stream with excellent results. Demonstrated strong leadership capabilities by holding significant positions such as <b>Class Monitor (Ketua Kelas)</b> and <b>Assistant Head Prefect (Penolong Ketua Pengawas)</b>, balancing academic rigor with student leadership responsibilities.
+                </p>
+            </td>
+        </tr>
+
+        <tr><td colspan="2" height="40"></td></tr>
+
+        <tr bgcolor="#4a000f">
+            <td align="center" valign="top" style="padding: 40px;">
+                <font face="Montserrat" size="2" color="#d4af37" letter-spacing="2"><b>SCHOOL VIEW</b></font><br><br>
+                <img src="images/DRONE SMKPZ.jpeg" width="100%" height="250" class="neon-image" style="object-fit:cover;">
+            </td>
+            <td align="center" valign="top" style="padding: 40px;">
+                <font face="Montserrat" size="2" color="#d4af37" letter-spacing="2"><b>SCHOOL LOCATION</b></font><br><br>
+                <iframe src="images/DATARAN SMKPZ.jpeg" width="100%" height="250" class="map-frame" style="border:0;"></iframe>
+                <br>
+                <a href="https://www.google.com/maps/place/SMK+Pendeta+Za'ba/@2.7248351,101.9852446,17z/data=!3m1!4b1!4m6!3m5!1s0x31cdde05b4cfffff:0x8d2ba6d65d37dd68!8m2!3d2.7248351!4d101.9878195!16s%2Fg%2F12q4_7lc4?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-btn">
+                    <i class="fas fa-map-marked-alt"></i> View Interactive Map
+                </a>
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <table width="85%" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#4d0011" style="border-radius: 20px; border: 1px solid #6b0017; overflow: hidden; margin: 0 auto;">
+        
+        <tr><td colspan="2" height="40"></td></tr>
+
+        <tr>
+            <td width="55%" valign="middle" style="padding: 0 40px;">
+                <font face="Tangerine" size="6" color="#d4af37">Primary Education</font><br>
+                <font face="Cormorant Garamond" size="6" color="#ffffff"><b>SKTPJ</b></font><br>
+                <font face="Montserrat" size="4" color="#d4af37"><b>UPSR 2017</b></font>
+                <br><br>
+                <table border="0" cellpadding="8" cellspacing="0" width="100%" style="border-top: 1px solid #d4af37; border-bottom: 1px solid #d4af37;">
+                    <tr>
+                        <td width="30%"><font face="Montserrat" color="#d4af37"><b>UPSR:</b></font></td>
+                        <td><font face="Montserrat" color="#ffffff">2B 2C 2D</font></td>
+                    </tr>
+                    <tr>
+                        <td><font face="Montserrat" color="#d4af37"><b>UPKK:</b></font></td>
+                        <td><font face="Montserrat" color="#ffffff">5A 2B 2B-</font></td>
+                    </tr>
+                </table>
+                <br>
+                <p style="text-align: justify; font-family: 'Montserrat', sans-serif; font-size: 15px; color: #f8f6e3; line-height: 1.8; margin: 0;">
+                    Completed primary education at SKTPJ with a strong foundation in both academic curriculum (UPSR) and religious studies (UPKK), achieving commendable results in religious proficiency exams.
+                </p>
+            </td>
+
+            <td width="45%" align="center" style="padding-right: 40px;">
+                <img src="images/gmbar sekolah sktpj.jpg" width="280" height="350" class="neon-image" style="object-fit:cover; box-shadow: 5px 5px 15px rgba(0,0,0,0.5);">
+            </td>
+        </tr>
+
+        <tr><td colspan="2" height="40"></td></tr>
+
+        <tr bgcolor="#3d000e">
+            <td align="center" valign="top" style="padding: 40px;">
+                <font face="Montserrat" size="2" color="#d4af37" letter-spacing="2"><b>SCHOOL LOCATION</b></font><br><br>
+                <iframe src="images/gambar maps sktpj.jpg" width="100%" height="250" class="map-frame" style="border:0;"></iframe>
+                <br>
+                <a href="https://www.google.com/maps/place/Sekolah+Kebangsaan+Taman+Paroi+Jaya/@2.7271153,101.987347,17z/data=!3m1!4b1!4m6!3m5!1s0x31cdde05625d1fc9:0x5f76611d0680737b!8m2!3d2.7271153!4d101.9899219!16s%2Fg%2F1227pxzy?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-btn">
+                    <i class="fas fa-map-marked-alt"></i> View Interactive Map
+                </a>
+            </td>
+            <td align="center" valign="top" style="padding: 40px;">
+                <font face="Montserrat" size="2" color="#d4af37" letter-spacing="2"><b>SCHOOL VIEW</b></font><br><br>
+                <img src="images/gambar view sktpj.jpeg" width="100%" height="250" class="neon-image" style="object-fit:cover;">
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <table width="100%" bgcolor="#6b0017" cellpadding="50" cellspacing="0">
+        <tr>
+            <td align="center">
+                <font face="Cormorant Garamond, serif" size="6" color="#d4af37"><b>TECHNICAL PROFICIENCY</b></font>
+                <br><br>
+                <table width="85%" border="1" bordercolor="#d4af37" cellpadding="20" cellspacing="0" bgcolor="#4d0011" style="margin: 0 auto;">
+                    <tr align="center" bgcolor="#330000">
+                        <td width="50%"><font face="Montserrat" size="4" color="#d4af37"><b>VIDEO EDITING & MEDIA</b></font></td>
+                        <td width="50%"><font face="Montserrat" size="4" color="#d4af37"><b>OFFICE PRODUCTIVITY</b></font></td>
+                    </tr>
+                    <tr align="center">
+                        <td valign="top">
+                            <font face="Montserrat" size="3" color="#ffffff">
+                                <i class="fas fa-video fa-2x" style="color:#d4af37; margin-bottom:10px;"></i><br>
+                                CapCut, Adobe Premiere Pro<br>(Refer to Resume)
+                            </font>
+                        </td>
+                        <td valign="top">
+                            <font face="Montserrat" size="3" color="#ffffff">
+                                <i class="fas fa-file-excel fa-2x" style="color:#d4af37; margin-bottom:10px;"></i><br>
+                                Excel, Google Docs, Office Suite<br>(Refer to Resume)
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <!-- FOOTER (KOTAK HITAM PENUH - FIXED) -->
+    <footer id="contact">
+        <table width="100%" bgcolor="#000000" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td align="center" style="padding: 60px 10%;">
+                    
+                    <!-- SOCIAL MEDIA ICONS -->
+                    <table width="70%" cellpadding="0" cellspacing="0" border="0" align="center" style="margin-bottom: 30px;">
+                        <tr>
+                            <td width="20%" align="center">
+                                <a href="https://www.linkedin.com/in/ahmad-amer-muqtaar-bin-shaik-alaudeen-7883a339b" target="_blank" style="text-decoration:none;">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="50" height="50" style="display:block; margin:0 auto 10px;">
+                                    <font face="Helvetica, sans-serif" size="2" color="#d4af37" style="letter-spacing:2px; font-weight:bold;">LinkedIn</font>
+                                </a>
+                            </td>
+                            <td width="20%" align="center">
+                                <a href="https://www.instagram.com/simp4muqh" target="_blank" style="text-decoration:none;">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="50" height="50" style="display:block; margin:0 auto 10px;">
+                                    <font face="Helvetica, sans-serif" size="2" color="#d4af37" style="letter-spacing:2px; font-weight:bold;">Instagram</font>
+                                </a>
+                            </td>
+                            <td width="20%" align="center">
+                                <a href="https://www.tiktok.com/@meerguwd" target="_blank" style="text-decoration:none;">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" width="50" height="50" style="display:block; margin:0 auto 10px;">
+                                    <font face="Helvetica, sans-serif" size="2" color="#d4af37" style="letter-spacing:2px; font-weight:bold;">TikTok</font>
+                                </a>
+                            </td>
+                            <td width="20%" align="center">
+                                <a href="https://wa.me/60143948538" target="_blank" style="text-decoration:none;">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="50" height="50" style="display:block; margin:0 auto 10px;">
+                                    <font face="Helvetica, sans-serif" size="2" color="#d4af37" style="letter-spacing:2px; font-weight:bold;">WhatsApp</font>
+                                </a>
+                            </td>
+                            <td width="20%" align="center">
+                                <a href="mailto:muqtaaralaudeen@gmail.com" style="text-decoration:none;">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="50" height="50" style="display:block; margin:0 auto 10px;">
+                                    <font face="Helvetica, sans-serif" size="2" color="#d4af37" style="letter-spacing:2px; font-weight:bold;">Email</font>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <!-- QUOTE (GOLD GRADIENT) -->
+                    <font face="Cormorant Garamond, serif" size="6" style="background: linear-gradient(to bottom, #d4af37 0%, #f4e4a6 30%, #fffbea 50%, #f4e4a6 70%, #d4af37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-shadow: 0 2px 10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3); display: block; margin-bottom: 20px;">
+                        "Organizing Chaos. Designing Solutions."
+                    </font>
+                    
+                    <!-- COPYRIGHT -->
+                    <font face="Montserrat, sans-serif" size="2" color="#c0c0c0">
+                        © 2025 Ahmad Amer Muqtaar. All Rights Reserved.
+                    </font>
+                    
+                </td>
+            </tr>
+        </table>
+    </footer>
+
+</body>
+</html>
