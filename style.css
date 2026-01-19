@@ -1,0 +1,51 @@
+body
+    {
+        background-color:yellow;
+    }
+
+p
+    {
+        color:blue;
+        font-family:Verdana, Geneva, Tahoma, Sans-Serif;
+        font-size: 14pt;
+        border: 2px solid turquoise
+        padding: 30px;
+    }
+
+h1
+    {
+        color: blue;
+        font-family; Impact, Haettenschveiler, 'Arial Narrow Bold', sans-serif;
+    }
+a:link
+    {
+        color:yellow;
+        background-color:whitesmoke;
+        text-decoration: none;
+        padding: 15px;
+        text-align: center;
+        display: inline-block;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+a:visited
+    {
+        color: blueviolet;
+        background-color:grey;
+        text-decoration: none;
+        padding: 15px;
+        text-align: center;
+        display: inline-block;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+a:hover
+    {
+        color:seagreen;
+        background-color: tan;
+        text-decoration: underline;
+    }
+a:active
+    {
+        color:indigo;
+        background-color:thistle;
+        text-decoration: overline;
+    }
